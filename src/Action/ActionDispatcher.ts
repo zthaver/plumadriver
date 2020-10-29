@@ -77,13 +77,7 @@ export default class ActionDispatcher {
   ] as const;
 
   /** https://www.w3.org/TR/webdriver1/#dfn-dispatch-a-pause-action */
-  static async dispatchPauseAction(
-    _session: Session,
-    _id: string,
-    _action: Action,
-    _source: InputSource,
-    _tickDuration: number,
-  ): Promise<void> {
+  static async dispatchPauseAction(): Promise<void> {
     // empty logic
   }
 

@@ -9,7 +9,7 @@ const performActions: Pluma.CommandHandler = async ({
   parameters,
 }) => {
   const actionByTicks = ActionRequestProcessor.extractAtionSequence(
-    session.activeInputSources,
+    session,
     parameters,
   );
   if (!session.browser.dom.window) throw new NoSuchWindow();

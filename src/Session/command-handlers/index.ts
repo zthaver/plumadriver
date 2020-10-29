@@ -32,6 +32,8 @@ import getElementProperty from './get-element-property';
 import getComputedLabel from './get-computed-label';
 import getComputedRole from './get-computed-role';
 import getElementCssValue from './get-element-css-value';
+import performActions from './peform-actions';
+import releaseActions from './release-actions.ts';
 
 export default {
   [COMMANDS.DELETE_SESSION]: deleteSession,
@@ -66,5 +68,10 @@ export default {
   [COMMANDS.SWITCH_TO_PARENT_FRAME]: switchToParentFrame,
   [COMMANDS.ELEMENT_SELECTED]: elementSelected,
   [COMMANDS.GET_COMPUTED_LABEL]: getComputedLabel,
+<<<<<<< HEAD
   [COMMANDS.GET_COMPUTED_ROLE]: getComputedRole,
+=======
+  [COMMANDS.PERFORM_ACTIONS]: performActions,
+  [COMMANDS.RELEASE_ACTIONS]: releaseActions,
+>>>>>>> 87e6129... feat: add action routes
 };

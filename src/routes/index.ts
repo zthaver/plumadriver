@@ -4,6 +4,7 @@ import element from './elements';
 import timeouts from './timeouts';
 import navigate from './navigate';
 import cookies from './cookies';
+import action from './action';
 import Pluma from '../Types/types';
 import * as Utils from '../utils/utils';
 
@@ -137,6 +138,9 @@ router.use('/session/:sessionId/url', navigate);
 
 // cookies routes
 router.use('/session/:sessionId/cookie', cookies);
+
+// action routes
+router.use('/session/:sessionId/actions', action);
 
 router.use(
   '/session/:sessionId/element/:elementId',

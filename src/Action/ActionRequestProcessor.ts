@@ -1,4 +1,5 @@
 import { InvalidArgument } from '../Error/errors';
+import Session from '../Session/Session';
 import {
   isJsonWebElement,
   isNumber,
@@ -13,7 +14,7 @@ import InputSource from './InputSource';
 export default class ActionRequestProcessor {
   /** https://www.w3.org/TR/webdriver1/#dfn-extract-an-action-sequence */
   static extractAtionSequence(
-    activeInputSources: Map<string, InputSource>,
+    session: Session,
     params: Record<string, unknown>,
   ): Action[][] {
     const { actions } = params;
@@ -23,7 +24,7 @@ export default class ActionRequestProcessor {
     actions.forEach(actionSequence => {
       if (!isObject(actionSequence)) throw new InvalidArgument();
       const inputSourceActions = this.processActionSequence(
-        activeInputSources,
+        session,
         actionSequence,
       );
       inputSourceActions.forEach((action, i) => {
@@ -37,9 +38,10 @@ export default class ActionRequestProcessor {
 
   /** https://www.w3.org/TR/webdriver1/#dfn-process-an-input-source-action-sequence */
   static processActionSequence(
-    activeInputSources: Map<string, InputSource>,
+    session: Session,
     actionSequence: Record<string, unknown>,
   ): Action[] {
+    const { activeInputSources } = session;
     const {
       type,
       id,
