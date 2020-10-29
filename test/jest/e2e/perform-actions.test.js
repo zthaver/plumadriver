@@ -14,7 +14,6 @@ describe('Process action request', () => {
     const res = await request(app)
       .post(`/session/${sessionId}/actions`)
       .send({ actions })
-    if (res.status !== status) console.log(res.body)
     expect(res.status).toBe(status)
   };
 

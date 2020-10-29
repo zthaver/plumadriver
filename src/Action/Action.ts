@@ -4,6 +4,7 @@ import { isUnsignedInteger } from '../utils/utils';
 import { InvalidArgument } from '../Error/errors';
 import { ELEMENT } from '../constants/constants';
 
+/** https://www.w3.org/TR/webdriver1/#dfn-action-object */
 export default class Action {
   readonly id: string;
 
