@@ -2,8 +2,8 @@
 export default <UnionType extends string>(
   ...values: UnionType[]
 ): {
-  guard: (value: string) => value is UnionType;
-  check: (value: string) => UnionType;
+  guard: (value: unknown) => value is UnionType;
+  check: (value: unknown) => UnionType;
   values: UnionType[];
 } & {
   type: UnionType;
@@ -11,11 +11,11 @@ export default <UnionType extends string>(
   Object.freeze(values);
   const valueSet: Set<string> = new Set(values);
 
-  const guard = (value: string): value is UnionType => {
-    return valueSet.has(value);
+  const guard = (value: unknown): value is UnionType => {
+    return typeof value === 'string' && valueSet.has(value);
   };
 
-  const check = (value: string): UnionType => {
+  const check = (value: unknown): UnionType => {
     if (!guard(value)) {
       const actual = JSON.stringify(value);
       const expected = values.map(s => JSON.stringify(s)).join(' | ');

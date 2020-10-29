@@ -18,6 +18,7 @@ import {
 
 import CapabilityValidator from '../CapabilityValidator/CapabilityValidator';
 import commandHandlers from './command-handlers';
+import InputSource from '../Action/InputSource';
 
 // DOM specific
 const {
@@ -52,6 +53,8 @@ class Session {
   mutex: Mutex;
 
   proxy = '';
+
+  activeInputSources = new Map<string, InputSource>();
 
   constructor(requestBody: Record<string, unknown>) {
     this.id = uuidv1();

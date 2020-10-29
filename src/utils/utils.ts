@@ -185,6 +185,13 @@ export const isBoolean = (candidateValue: unknown): candidateValue is boolean =>
 export const isNumber = (candidateValue: unknown): candidateValue is number =>
   typeof candidateValue === 'number';
 
+export const isUnsignedInteger = (value: number): boolean =>
+  Number.isInteger(value) && value >= 0;
+
+export const isUndefined = (
+  candidateValue: unknown,
+): candidateValue is undefined => typeof candidateValue === 'undefined';
+
 // Expose the version in package.json
 export const getVersion = (): string => `v${version}`;
 
