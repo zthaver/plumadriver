@@ -19,6 +19,7 @@ import {
 import CapabilityValidator from '../CapabilityValidator/CapabilityValidator';
 import commandHandlers from './command-handlers';
 import InputSource from '../Action/InputSource';
+import Action from '../Action/Action';
 
 // DOM specific
 const {
@@ -54,7 +55,9 @@ class Session {
 
   proxy = '';
 
-  activeInputSources = new Map<string, InputSource>();
+  readonly activeInputSources = new Map<string, InputSource>();
+
+  readonly inputCancelList: Action[] = [];
 
   constructor(requestBody: Record<string, unknown>) {
     this.id = uuidv1();

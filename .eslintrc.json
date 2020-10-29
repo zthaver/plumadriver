@@ -29,7 +29,8 @@
         "allow": ["warn", "error", "info"]
       }
     ],
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-await-in-loop": "off"
   },
   "overrides": [
     {

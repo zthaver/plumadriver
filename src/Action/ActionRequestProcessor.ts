@@ -10,7 +10,7 @@ import Action from './Action';
 import InputSource from './InputSource';
 
 /** https://www.w3.org/TR/webdriver1/#processing-actions-requests */
-export default class ActionRequestHandler {
+export default class ActionRequestProcessor {
   /** https://www.w3.org/TR/webdriver1/#dfn-extract-an-action-sequence */
   static extractAtionSequence(
     activeInputSources: Map<string, InputSource>,
