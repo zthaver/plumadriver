@@ -1,3 +1,14 @@
+## WIP
+- [ ] Add error messages
+- [ ] Add more tests for processing action requests
+- [ ] Implement action dispatch algorithms
+  - [ ] `keyDown`
+  - [ ] `keyUp`
+  - [ ] `pointerDown`
+  - [ ] `pointerUp`
+  - [ ] `pointerMove`
+  - [ ] `pointerCancel`
+
 # PlumaDriver
 
 PlumaDriver is a Node.js implementation of the [W3C WebDriver Recommendation](https://www.w3.org/TR/webdriver1/#protocol) for the [jsdom](https://github.com/jsdom/jsdom) library. The goal of this project is to provide an automation tool for jsdom in order to test web applications without the overhead of modern web browsers.
